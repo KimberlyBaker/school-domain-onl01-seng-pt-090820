@@ -1,17 +1,24 @@
 class School
   
-  @school = School.new()
-  @school.add_student("Zach Morris", 9)
-  @school.add_student("AC Slater", 9)
-  @school.add_student("Kelly Kapowski", 10)
-  @school.add_student("Screech", 11)
-  @school.greade(9)
-  @school.roster
-  @school.sort
+  class School
+	attr_accessor :roster, :name, :grade 
+	attr_reader :school 
+	
+	def initialize(school)
+    @school = school
+  end
   
-  hash["new_key"] = []
-  hash["new_key"] << "new_value_for_value_array"
- 
-  hash
+  def roster
+  	roster = {}
+  end 
   
+  def add_student(name,grade)
+  	roster[grade] = []
+  	roster[grade] << name
+  		
+  end
+
 end
+
+
+School.new("R").roster.add_student("john",9)
